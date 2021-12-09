@@ -25,7 +25,6 @@ public class ReviewService {
 
     public int updateReview(int rid, Review review) {
         Review oldReview = reviewRepository.findReviewById(rid);
-        oldReview.setRating(review.getRating());
         oldReview.setContent(review.getContent());
         reviewRepository.save(oldReview);
         return 1;

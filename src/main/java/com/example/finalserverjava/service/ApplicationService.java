@@ -30,7 +30,7 @@ public class ApplicationService {
         return 1;
     }
 
-    public List<Application> findApplications() {
-        return applicationRepository.findApplications();
+    public List<Application> findAllApplications() {
+        return applicationRepository.findAllApplications();
     }
 }

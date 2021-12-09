@@ -19,9 +19,7 @@ public interface ReviewRepository  extends CrudRepository<Review, Integer> {
     @Query("SELECT review from Review review WHERE review.id=:reviewId")
     public Review findReviewById(@Param("reviewId") int rid);
 
-    @Query(value="SELECT * FROM reviews ORDER BY reviews.id DESC LIMIT 8", nativeQuery=true)
+    @Query(value="SELECT * FROM reviews ORDER BY reviews.id DESC LIMIT 10", nativeQuery=true)
     public List<Review> findRecentReviews();
 
-//    @Query("SELECT review from Review review WHERE review.id=:reviewId and review.userId=:userId")
-//    public Review deleteReviewByIdUser(@Param("reviewId") int rid, @Param("userId") int uid);
 }

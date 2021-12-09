@@ -24,7 +24,7 @@ public class ApplicationController {
     }
 
     @GetMapping("/api/pets/{petId}/applications")
-    public List<Application> findApplicationsForpet(
+    public List<Application> findApplicationsForPet(
             @PathVariable("petId") String bid) {
         return applicationService.findApplicationsForPet(bid);
     }
@@ -49,7 +49,7 @@ public class ApplicationController {
 //    }
 
     @GetMapping("/api/applications")
-    public List<Application> findApplications() {
-        return applicationService.findApplications();
+    public List<Application> findAllApplications() {
+        return applicationService.findAllApplications();
     }
 }

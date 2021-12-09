@@ -20,7 +20,7 @@ import java.util.List;
         @Query("SELECT application from Application application WHERE application.id=:applicationId")
         public Application findApplicationById(@Param("applicationId") int rid);
 
-        @Query(value="SELECT * FROM applications", nativeQuery=true)
-        public List<Application> findApplications();
+        @Query(value="SELECT * FROM applications ORDER BY applications.id DESC", nativeQuery=true)
+        public List<Application> findAllApplications();
 
     }

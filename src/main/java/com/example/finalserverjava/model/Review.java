@@ -12,7 +12,6 @@ public class Review {
     private String username;
     private String petId;
     private String petTitle;
-    private int rating;
     private String content;
 
     public Integer getId() {
@@ -53,14 +52,6 @@ public class Review {
 
     public void setPetTitle(String petTitle) {
         this.petTitle = petTitle;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
     }
 
     public String getContent() {
