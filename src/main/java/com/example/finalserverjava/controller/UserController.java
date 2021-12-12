@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 
 @RestController
@@ -62,16 +63,17 @@ public class UserController {
         // store the current user's info into session for future retrieve
         session.setAttribute("profile", newUser);
         return newUser;
+
     }
 
-//    @PostMapping("/profile")
-//    public User profile(HttpSession session, HttpServletResponse res) {
-//        User profile = (User) session.getAttribute("profile");
-//        if (profile != null)
-//            return profile;
-//        else {
-//            res.setStatus(403);
-//            return null;
-//        }
-//    }
+    @PostMapping("/profile")
+    public User profile(HttpSession session, HttpServletResponse res) {
+        User profile = (User) session.getAttribute("profile");
+        if (profile != null)
+            return profile;
+        else {
+            res.setStatus(403);
+            return null;
+        }
+    }
 }
