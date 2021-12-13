@@ -63,7 +63,6 @@ public class UserController {
         // store the current user's info into session for future retrieve
         session.setAttribute("profile", newUser);
         return newUser;
-
     }
 
     @PostMapping("/profile")
@@ -75,5 +74,31 @@ public class UserController {
             res.setStatus(403);
             return null;
         }
+    }
+
+    @GetMapping("/profile/{userId}")
+    public User getProfileForUser(@PathVariable("userId") int uid) {
+        User profile = repository.getProfileForUser(uid);
+        profile.setPassword("***");
+        return profile;
+    }
+
+    @GetMapping("/users")
+    public List<Object[]> findRecentlyJoinedUsers() {
+        return repository.findRecentlyJoinedUsers();
+    }
+
+    @PutMapping("/api/users/{userId}")
+    public int updateProfile(
+            @PathVariable("userId") int uid,
+            @RequestBody User user,
+            HttpSession session) {
+        User oldUser = repository.findUserById(uid);
+        oldUser.setUsername(user.getUsername());
+        oldUser.setZipCode(user.getZipCode());
+        oldUser.setEmail(user.getEmail());
+        repository.save(oldUser);
+        session.setAttribute("profile", oldUser);
+        return 1;
     }
 }

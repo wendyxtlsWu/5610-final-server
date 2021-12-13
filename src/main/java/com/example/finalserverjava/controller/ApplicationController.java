@@ -35,6 +35,13 @@ public class ApplicationController {
         return applicationService.findApplicationsForUser(uid);
     }
 
+    @PutMapping("/api/applications/{applicationId}")
+    public int updateApplication(
+            @PathVariable("applicationId") int aid,
+            @RequestBody Application application
+    ) {
+        return applicationService.updateApplication(aid, application);
+    }
 
     @DeleteMapping("/api/applications/{applicationId}")
     public int deleteApplication(
@@ -42,11 +49,6 @@ public class ApplicationController {
     ) {
         return applicationService.deleteApplication(rid);
     }
-
-//    @PostMapping("/api/reviews")
-//    public List<Review> findRecentReviews() {
-//        return reviewService.findRecentReviews();
-//    }
 
     @GetMapping("/api/applications")
     public List<Application> findAllApplications() {

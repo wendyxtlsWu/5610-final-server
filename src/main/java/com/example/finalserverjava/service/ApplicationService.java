@@ -17,16 +17,23 @@ public class ApplicationService {
         return applicationRepository.save(newApplication);
     }
 
-    public List<Application> findApplicationsForPet(String bid) {
-        return applicationRepository.findApplicationsForPet(bid);
+    public List<Application> findApplicationsForPet(String pid) {
+        return applicationRepository.findApplicationsForPet(pid);
     }
 
     public List<Application> findApplicationsForUser(int uid) {
         return applicationRepository.findApplicationsForUser(uid);
     }
 
-    public int deleteApplication(int rid) {
-        applicationRepository.deleteById(rid);
+    public int updateApplication(int aid, Application application) {
+        Application oldApplication = applicationRepository.findApplicationById(aid);
+        oldApplication.setPetTitle(application.getPetTitle());
+        applicationRepository.save(oldApplication);
+        return 1;
+    }
+
+    public int deleteApplication(int aid) {
+        applicationRepository.deleteById(aid);
         return 1;
     }
 

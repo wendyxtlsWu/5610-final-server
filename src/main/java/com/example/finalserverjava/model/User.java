@@ -49,7 +49,7 @@ public class User {
         this.email = email;
     }
 
-    public Integer getZipCOde() {
+    public Integer getZipCode() {
         return zipCode;
     }
 
