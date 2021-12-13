@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 
-//import java.util.List;
+import java.util.List;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
     @Query("SELECT user FROM User user WHERE user.username=:username AND user.password=:password")
@@ -23,8 +23,9 @@ public interface UserRepository extends CrudRepository<User, Integer> {
 
     @Query("SELECT user from User user WHERE user.username=:username")
     public User findUserByUsername(@Param("username") String username);
-//    @Query(value="SELECT user.id, user.username FROM user ORDER BY user.id DESC LIMIT 10", nativeQuery=true)
-//    public List<Object[]> findRecentlyJoinedUsers();
+
+    @Query(value="SELECT user.id, user.username FROM user ORDER BY user.id DESC LIMIT 10", nativeQuery=true)
+    public List<Object[]> findRecentlyJoinedUsers();
 
     @Query(value="SELECT user FROM User user WHERE user.userId=:userId")
     public User getProfileForUser(@Param("userId") int userId);

@@ -53,5 +53,4 @@ public class Application {
     public void setPetTitle(String petTitle) {
         this.petTitle = petTitle;
     }
-
 }
