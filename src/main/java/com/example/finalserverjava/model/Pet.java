@@ -17,7 +17,7 @@ public class Pet {
     private String gender;
     private Boolean need_shelter;
     private Integer userId;
-    private Integer userName;
+    private String userName;
 
     public Integer getId() {
         return id;
@@ -92,11 +92,11 @@ public class Pet {
         this.userId = userId;
     }
 
-    public Integer getUserName() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUserName(Integer userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
