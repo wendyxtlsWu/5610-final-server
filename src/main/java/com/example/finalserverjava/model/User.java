@@ -13,9 +13,6 @@ public class User {
     private String email;
     private String userType;
 
-    public User() {
-    }
-
 
     public Integer getUserId() {
         return userId;
