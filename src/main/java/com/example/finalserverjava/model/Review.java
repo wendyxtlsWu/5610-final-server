@@ -13,6 +13,16 @@ public class Review {
     private String petId;
     private String petTitle;
     private String content;
+    private String petImageURL;
+
+    public String getPetImageURL() {
+        return petImageURL;
+    }
+
+    public void setPetImageURL(String petImageURL) {
+        this.petImageURL = petImageURL;
+    }
+
 
     public Integer getId() {
         return id;
