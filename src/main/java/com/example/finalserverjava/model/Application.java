@@ -13,16 +13,16 @@ public class Application {
     private String username;
     private String petId;
     private String petTitle;
+//
+//    public String getPetImageURL() {
+//        return petImageURL;
+//    }
+//
+//    public void setPetImageURL(String petImageURL) {
+//        this.petImageURL = petImageURL;
+//    }
 
-    public String getPetImageURL() {
-        return petImageURL;
-    }
-
-    public void setPetImageURL(String petImageURL) {
-        this.petImageURL = petImageURL;
-    }
-
-    private String petImageURL;
+//    private String petImageURL;
 
     public Integer getId() {
         return id;
